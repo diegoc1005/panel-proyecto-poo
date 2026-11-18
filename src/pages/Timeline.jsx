@@ -228,12 +228,12 @@ export function Timeline({ tasks }) {
 
           {/* Footer: línea de hoy con label */}
           <div className="flex">
-            <div className="shrink-0 border-r border-gray-200 bg-gray-50 py-1.5 px-4" style={{ width: LABEL_WIDTH }}>
+            <div className="shrink-0 border-r border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 py-1.5 px-4" style={{ width: LABEL_WIDTH }}>
               <span className="text-xs text-red-500 font-medium">
                 Hoy: {format(new Date(), "d 'de' MMM", { locale: es })}
               </span>
             </div>
-            <div className="flex-1 relative h-6 bg-gray-50">
+            <div className="flex-1 relative h-6 bg-gray-50 dark:bg-gray-800">
               {todayPct >= 0 && todayPct <= 100 && (
                 <div
                   className="absolute top-0 bottom-0 w-0.5 bg-red-400"
@@ -257,7 +257,7 @@ function GridLines({ marks, todayPct }) {
         return (
           <div
             key={i}
-            className="absolute top-0 bottom-0 border-l border-gray-100 pointer-events-none"
+            className="absolute top-0 bottom-0 border-l border-gray-100 dark:border-gray-700/60 pointer-events-none"
             style={{ left: `${pct}%` }}
           />
         )

@@ -405,8 +405,8 @@ export function Dashboard({ tasks, history }) {
       </div>
 
       {/* Actividad reciente */}
-      <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-        <h2 className="font-semibold text-gray-800 mb-4">Actividad reciente</h2>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 shadow-sm">
+        <h2 className="font-semibold text-gray-800 dark:text-white mb-4">Actividad reciente</h2>
         {recentHistory.length === 0 ? (
           <p className="text-sm text-gray-400 italic">Sin actividad registrada aún.</p>
         ) : (
@@ -417,10 +417,10 @@ export function Dashboard({ tasks, history }) {
                 <div key={entry.id} className="flex items-start gap-3">
                   <Avatar memberId={entry.author_id} size="sm" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-gray-700 dark:text-gray-200">
                       <span className="font-medium">{author?.name.split(' ')[0]}</span>
-                      {' '}<span className="text-gray-500">{entry.action}</span>
-                      {' '}<span className="text-gray-600 text-xs">{entry.details}</span>
+                      {' '}<span className="text-gray-500 dark:text-gray-400">{entry.action}</span>
+                      {' '}<span className="text-gray-600 dark:text-gray-300 text-xs">{entry.details}</span>
                     </p>
                     <p className="text-xs text-gray-400">
                       {format(new Date(entry.created_at), "d 'de' MMM 'a las' HH:mm", { locale: es })}

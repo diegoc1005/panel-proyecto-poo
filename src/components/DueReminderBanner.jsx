@@ -48,7 +48,7 @@ export function DueReminderBanner({ tasks, currentUser, onNavigate }) {
     if (perm === 'granted') {
       setNotifGranted(true)
       if (reminderData.totalUrgent > 0) {
-        new Notification('Panel Arma-dilo: Tareas próximas', {
+        new Notification('Panel CINE-TICs (Equipo 3): Tareas próximas', {
           body: `Hola ${user?.name.split(' ')[0] || ''}, tienes ${reminderData.totalUrgent} tarea(s) pendientes con fecha próxima.`,
           icon: '/favicon.ico',
         })
