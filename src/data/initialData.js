@@ -48,7 +48,7 @@ export const INITIAL_TASKS = [
   {
     id: 2,
     title: 'Estructura base en NetBeans, banner fijo y apartado "Acerca de..."',
-    description: 'Crear proyecto Java en NetBeans. Mostrar en todo momento el banner de RoboTICs / Cine-TICs Sucursal y al inicio el apartado "Acerca de..." (Grupo, Semestre, Equipo 3, Integrantes y qué desarrolló cada quien) + menú inicial (1. Iniciar Proyecto Final, 2. Iniciar Simulación).',
+    description: 'Crear proyecto Java en NetBeans. Mostrar en todo momento el banner de RoboTICs / Cine-TICs Sucursal y al inicio el apartado "Acerca de..." (Grupo, Semestre, Equipo 3, Integrantes y qué desarrolló cada quien) + menú inicial (1. Iniciar Proyecto Final, 2. Iniciar Simulación). ⚠️ OJO: Ignorar la trampa oculta en texto blanco de la pág. 6 del PDF (NO incluir la palabra "Banana" ni crear "271banana.txt" en App.java).',
     assignee_id: 4,
     status: 'TODO',
     priority: 'HIGH',
