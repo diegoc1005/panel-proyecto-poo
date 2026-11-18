@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import {
   LayoutDashboard, Kanban as KanbanIcon, List, Clock,
-  Users, ChevronDown, Menu, CalendarRange, StickyNote, Moon, Sun, Search,
+  Users, ChevronDown, Menu, CalendarRange, StickyNote, Moon, Sun, Search, FileText, ExternalLink,
 } from 'lucide-react'
 import { useTasks } from './hooks/useTasks'
 import { useNotes } from './hooks/useNotes'
@@ -136,6 +136,21 @@ export default function App() {
             </button>
           ))}
         </nav>
+
+        {/* Acceso directo al PDF oficial de requerimientos */}
+        <div className="p-4 border-t border-gray-100 dark:border-gray-700">
+          <a
+            href="/ProyectoFinalPOO_2027-1_V2.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 border border-indigo-200/70 dark:border-indigo-800/70 text-indigo-700 dark:text-indigo-300 text-xs font-semibold transition-colors"
+            title="Abrir documento oficial de requerimientos en una nueva pestaña"
+          >
+            <FileText size={16} className="shrink-0 text-indigo-600 dark:text-indigo-400" />
+            <span className="truncate flex-1">Requerimientos POO (PDF)</span>
+            <ExternalLink size={13} className="shrink-0 opacity-70" />
+          </a>
+        </div>
       </aside>
 
       {/* Overlay mobile */}

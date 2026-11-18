@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import {
   CheckCircle2, Clock, AlertTriangle, ListTodo,
-  TrendingUp, Users, Flame, Tag, Zap, AlertOctagon, ShieldAlert
+  TrendingUp, Users, Flame, Tag, Zap, AlertOctagon, ShieldAlert, FileText, ExternalLink
 } from 'lucide-react'
 import { TEAM_MEMBERS } from '../data/initialData'
 import { Avatar } from '../components/Avatar'
@@ -150,7 +150,19 @@ export function Dashboard({ tasks, history }) {
       {/* Header con countdown a Exposición y Entrega Final */}
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+            <a
+              href="/ProyectoFinalPOO_2027-1_V2.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-indigo-50 dark:bg-indigo-900/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/70 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-xs font-semibold transition-colors"
+            >
+              <FileText size={13} />
+              <span>Ver PDF de Requerimientos</span>
+              <ExternalLink size={11} />
+            </a>
+          </div>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
             Sistema de Autocinemas CINE-TICs & S.I.G.A (RoboTICs) — Equipo 3 · POO
           </p>
