@@ -5,6 +5,6 @@ export function useDocumentTitle(tasks) {
     if (!tasks || tasks.length === 0) return
     const done  = tasks.filter((t) => t.status === 'DONE').length
     const total = tasks.length
-    document.title = `[${done}/${total}] Panel Arma-dilo`
+    document.title = `[${done}/${total}] CINE-TICs · Equipo 3 POO`
   }, [tasks])
 }

@@ -41,9 +41,9 @@ export function Team({ tasks }) {
   return (
     <div className="space-y-4">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Equipo Arma-dilo</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Equipo 3 · CINE-TICs</h1>
         <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-          Sistema de Gestión de Pago de Honorarios — Equipo 6 · 5to semestre Grupo 6
+          Sistema de Gestión de Autocinemas CINE-TICs & S.I.G.A — Programación Orientada a Objetos (2027-1)
         </p>
       </div>
 

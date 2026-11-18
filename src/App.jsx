@@ -75,7 +75,7 @@ export default function App() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center text-white font-bold text-lg mx-auto mb-4 animate-pulse">
-            AD
+            CT
           </div>
           <p className="text-gray-500 dark:text-gray-400 text-sm">Cargando panel...</p>
         </div>
@@ -94,11 +94,11 @@ export default function App() {
         <div className="p-5 border-b border-gray-100 dark:border-gray-700">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shrink-0">
-              AD
+              CT
             </div>
             <div className="min-w-0">
-              <p className="font-bold text-gray-900 dark:text-white text-sm">Arma-dilo</p>
-              <p className="text-xs text-gray-400">Equipo 6 · IS</p>
+              <p className="font-bold text-gray-900 dark:text-white text-sm truncate">CINE-TICs · S.I.G.A</p>
+              <p className="text-xs text-gray-400">Equipo 3 · POO</p>
             </div>
             <div className="ml-auto text-right shrink-0">
               <p className="text-xs font-bold text-indigo-600">{doneCount}/{tasks.length}</p>

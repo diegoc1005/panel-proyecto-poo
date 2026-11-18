@@ -1,13 +1,6 @@
 import { useState } from 'react'
 import { X, Link as LinkIcon } from 'lucide-react'
-import { TEAM_MEMBERS, STATUSES, PRIORITIES } from '../data/initialData'
-
-const CATEGORIES = [
-  'Documentación', 'Gestión', 'Planificación', 'Arquitectura',
-  'Diagramas', 'Base de datos', 'Análisis', 'Requerimientos',
-  'Diseño', 'Testing', 'Costos', 'Factibilidad', 'Presentación',
-  'Entrega', 'General',
-]
+import { TEAM_MEMBERS, STATUSES, PRIORITIES, CATEGORIES } from '../data/initialData'
 
 export function AddTaskModal({ onClose, onAdd, currentUser }) {
   const [form, setForm] = useState({

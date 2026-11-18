@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export function useDarkMode() {
   const [dark, setDark] = useState(() => {
-    return localStorage.getItem('arma-dilo-dark') === 'true'
+    return localStorage.getItem('poo-cinetics-dark') === 'true'
   })
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export function useDarkMode() {
     } else {
       document.documentElement.classList.remove('dark')
     }
-    localStorage.setItem('arma-dilo-dark', dark)
+    localStorage.setItem('poo-cinetics-dark', dark)
   }, [dark])
 
   return [dark, setDark]

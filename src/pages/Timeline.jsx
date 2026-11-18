@@ -3,8 +3,8 @@ import { TEAM_MEMBERS } from '../data/initialData'
 import { parseISO, format, differenceInDays, addDays, eachWeekOfInterval } from 'date-fns'
 import { es } from 'date-fns/locale'
 
-const PROJECT_START = new Date('2026-11-09')
-const PROJECT_END   = new Date('2026-12-05')
+const PROJECT_START = new Date('2026-11-16')
+const PROJECT_END   = new Date('2026-12-07')
 const TOTAL_DAYS    = differenceInDays(PROJECT_END, PROJECT_START) + 1
 const ROW_HEIGHT    = 32   // px por fila de tarea
 const LABEL_WIDTH   = 220  // px columna izquierda

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
+import { INITIAL_TASKS } from '../data/initialData'
 
 export function useTasks() {
   const [tasks, setTasks] = useState([])
@@ -15,16 +16,30 @@ export function useTasks() {
       ])
 
       if (tasksResult.error) {
-        console.error('[Supabase] Error al cargar tasks:', tasksResult.error)
+        console.error('[Supabase] Error al cargar tasks (usando INITIAL_TASKS local):', tasksResult.error)
+        setTasks(INITIAL_TASKS)
+      } else if (tasksResult.data && tasksResult.data.length === 0 && INITIAL_TASKS.length > 0) {
+        // Sembrar automáticamente las tareas iniciales si la tabla existe pero está vacía
+        const payload = INITIAL_TASKS.map(({ id, ...rest }) => rest)
+        const { data: seeded, error: seedError } = await supabase
+          .from('tasks')
+          .insert(payload)
+          .select()
+        if (!seedError && seeded) {
+          console.log('[Supabase] Tareas iniciales sembradas:', seeded.length)
+          setTasks(seeded)
+        } else {
+          setTasks(INITIAL_TASKS)
+        }
       } else {
         console.log('[Supabase] Tasks cargadas:', tasksResult.data?.length)
+        setTasks(tasksResult.data ?? [])
       }
 
       if (historyResult.error) {
         console.error('[Supabase] Error al cargar history:', historyResult.error)
       }
 
-      setTasks(tasksResult.data ?? [])
       setHistory(historyResult.data ?? [])
       setLoading(false)
     }

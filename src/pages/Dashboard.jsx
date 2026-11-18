@@ -8,8 +8,9 @@ import { Avatar } from '../components/Avatar'
 import { format, parseISO, isPast, isToday, differenceInDays, isTomorrow, isYesterday, subDays } from 'date-fns'
 import { es } from 'date-fns/locale'
 
-// Fecha límite del proyecto
-const DEADLINE = new Date('2026-12-05')
+// Fechas clave del proyecto POO
+const EXPO_DATE = new Date('2026-11-30')
+const DEADLINE = new Date('2026-12-07')
 
 function StatCard({ icon: Icon, label, value, color, sub }) {
   return (
@@ -50,6 +51,7 @@ function DaysChip({ dueDate, status }) {
 }
 
 export function Dashboard({ tasks, history }) {
+  const daysToExpo = differenceInDays(EXPO_DATE, new Date())
   const daysToDeadline = differenceInDays(DEADLINE, new Date())
 
   const stats = useMemo(() => {
@@ -145,23 +147,37 @@ export function Dashboard({ tasks, history }) {
 
   return (
     <div className="space-y-6">
-      {/* Header con countdown al deadline */}
-      <div className="flex items-start justify-between">
+      {/* Header con countdown a Exposición y Entrega Final */}
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
-          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Sistema de Gestión de Pago de Honorarios — Equipo Arma-dilo</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+            Sistema de Autocinemas CINE-TICs & S.I.G.A (RoboTICs) — Equipo 3 · POO
+          </p>
         </div>
-        <div className={`text-center px-5 py-3 rounded-2xl border-2 ${
-          daysToDeadline <= 7 ? 'border-red-200 dark:border-red-900/60 bg-red-50 dark:bg-red-950/40' :
-          daysToDeadline <= 14 ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50 dark:bg-amber-950/40' :
-          'border-indigo-100 dark:border-indigo-900/60 bg-indigo-50 dark:bg-indigo-950/40'
-        }`}>
-          <p className={`text-3xl font-black ${
-            daysToDeadline <= 7 ? 'text-red-600 dark:text-red-400' :
-            daysToDeadline <= 14 ? 'text-amber-600 dark:text-amber-400' : 'text-indigo-600 dark:text-indigo-400'
-          }`}>{daysToDeadline}</p>
-          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">días al deadline</p>
-          <p className="text-xs text-gray-400 dark:text-gray-500">5 Dic 2026</p>
+        <div className="flex items-center gap-3 shrink-0">
+          <div className={`text-center px-4 py-2.5 rounded-2xl border-2 ${
+            daysToExpo <= 5 ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50 dark:bg-amber-950/40' :
+            'border-sky-100 dark:border-sky-900/60 bg-sky-50 dark:bg-sky-950/40'
+          }`}>
+            <p className={`text-2xl font-black ${
+              daysToExpo <= 5 ? 'text-amber-600 dark:text-amber-400' : 'text-sky-600 dark:text-sky-400'
+            }`}>{Math.max(daysToExpo, 0)}</p>
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400">días a Exposición</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">30 Nov / 2 Dic</p>
+          </div>
+          <div className={`text-center px-4 py-2.5 rounded-2xl border-2 ${
+            daysToDeadline <= 7 ? 'border-red-200 dark:border-red-900/60 bg-red-50 dark:bg-red-950/40' :
+            daysToDeadline <= 14 ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50 dark:bg-amber-950/40' :
+            'border-indigo-100 dark:border-indigo-900/60 bg-indigo-50 dark:bg-indigo-950/40'
+          }`}>
+            <p className={`text-2xl font-black ${
+              daysToDeadline <= 7 ? 'text-red-600 dark:text-red-400' :
+              daysToDeadline <= 14 ? 'text-amber-600 dark:text-amber-400' : 'text-indigo-600 dark:text-indigo-400'
+            }`}>{Math.max(daysToDeadline, 0)}</p>
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400">días a Entrega Final</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">7 Dic 2026</p>
+          </div>
         </div>
       </div>
 

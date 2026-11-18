@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 
-const PRESENCE_KEY = 'arma-dilo-presence'
+const PRESENCE_KEY = 'poo-cinetics-presence'
 
 // Guarda "vista por última vez" para un usuario dado
 export function usePresence(currentUser) {
